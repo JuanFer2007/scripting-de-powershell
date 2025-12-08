@@ -21,17 +21,22 @@ wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-micros
 # El $VERSION_ID se reemplaza automáticamente con tu versión de Ubuntu.
 
 # Register the Microsoft repository keys
-sudo dpkg -i packages-microsoft-prod.deb 
+sudo dpkg -i packages-microsoft-prod.deb 0 # Ahora "instalamos" esa llave en el sistema. Es como registrar una nueva
+# "tienda de aplicaciones" de Microsoft en tu computadora Linux.
 
 # Delete the Microsoft repository keys file
-rm packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb # Borramos el archivo de la llave porque ya lo instalamos y no lo necesitamos más.
+# Es como tirar el sobre después de sacar la carta
 
 # Update the list of packages after we added packages.microsoft.com
-sudo apt-get update
+sudo apt-get update  # Volvemos a actualizar el catálogo, pero ahora incluye los programas de Microsoft
+# porque ya agregamos su "tienda".
 
 ###################################
 # Install PowerShell
-sudo apt-get install -y powershell
+sudo apt-get install -y powershell  # Finalmente instalamos PowerShell. Como ya tenemos acceso a la "tienda" de Microsoft,
+# ahora podemos descargar e instalar PowerShell sin problemas.
 
 # Start PowerShell
-pwsh
+pwsh # Este comando abre PowerShell. Es como hacer doble clic en un programa.
+# Verás que tu terminal cambia y ahora estás dentro de PowerShell.

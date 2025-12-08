@@ -1,24 +1,36 @@
 #INTERFAZ GRAFICA DE USUARIO
 
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
+Add-Type -AssemblyName System.Windows.Forms# "Add-Type" es como instalar/activar herramientas adicionales en PowerShell
+# "-AssemblyName" significa "el nombre del paquete de herramientas"
+# "System.Windows.Forms" es una librería que contiene todo lo necesario para crear ventanas,
+# botones, cajas de texto, etc. Es como un kit de construcción para interfaces gráficas.
+Add-Type -AssemblyName System.Drawing # "System.Drawing" es otra librería que maneja todo lo relacionado con gráficos:
+# tamaños, colores, posiciones en la pantalla, etc.
 
 # Create form
-$form = New-Object System.Windows.Forms.Form
-$form.Text = "Input Form"
-$form.Size = New-Object System.Drawing.Size(500,250)
-$form.StartPosition = "CenterScreen"
+$form = New-Object System.Windows.Forms.Form # "New-Object" significa "crear un objeto nuevo" (en este caso, una ventana/formulario)
+# "$form" es una variable que guardará nuestra ventana
+# Es como decir: "Voy a construir una ventana y la llamaré $form"
+$form.Text = "Input Form" # La propiedad ".Text" define el TÍTULO que aparece en la barra superior de la ventana
+$form.Size = New-Object System.Drawing.Size(500,250) # ".Size" define el TAMAÑO de la ventana
+# New-Object System.Drawing.Size(ancho, alto) crea un tamaño de 500 píxeles de ancho x 250 de alto
+# Es como decir: "Esta ventana medirá 500x250 píxeles"
+$form.StartPosition = "CenterScreen" # ".StartPosition" define DÓNDE aparecerá la ventana cuando se abra
+# "CenterScreen" significa que aparecerá en el CENTRO de tu pantalla
 
 ############# Define labels
-$textLabel1 = New-Object System.Windows.Forms.Label
-$textLabel1.Text = "Input 1:"
-$textLabel1.Left = 20
-$textLabel1.Top = 20
-$textLabel1.Width = 120
-
+$textLabel1 = New-Object System.Windows.Forms.Label # Crear la primera etiqueta (un texto que dice "Input 1:")
+$textLabel1.Text = "Input 1:" # El texto que mostrará esta etiqueta
+$textLabel1.Left = 20 # ".Left" define la posición HORIZONTAL (desde la izquierda)
+# 20 píxeles desde el borde izquierdo de la ventana
+$textLabel1.Top = 20  # ".Top" define la posición VERTICAL (desde arriba)
+# 20 píxeles desde el borde superior de la ventana
+$textLabel1.Width = 120  # ".Width" es el ANCHO de la etiqueta
+# 120 píxeles de ancho
+# Igual que la primera etiqueta pero en diferente posicion 
 $textLabel2 = New-Object System.Windows.Forms.Label
 $textLabel2.Text = "Input 2:"
-$textLabel2.Left = 20
+$textLabel2.Left = 20                                    # Más abajo que la primera (60 en lugar de 20)
 $textLabel2.Top = 60
 $textLabel2.Width = 120
 
